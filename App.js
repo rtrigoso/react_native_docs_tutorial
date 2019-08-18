@@ -20,6 +20,7 @@ import FlexStyle from './components/FlexStyle';
 import WordScrambler from './components/WordScrambler';
 import ButtonExample from './components/ButtonExample';
 import TouchableExamples from './components/TouchableExamples';
+import ListExamples from './components/ListExamples';
 
 
 class Greeting extends Component {
@@ -50,6 +51,9 @@ export default class HelloWorldApp extends Component {
       <ScrollView
         pagingEnabled={true}
       >
+        <View style={{flex:1}}>
+          <ListExamples />
+        </View>
         <View style={{flex:1, justifyContent: "center", alignItems: "center"}}>
           <Greeting name='Ren'/>
           <Bananas/>
