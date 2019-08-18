@@ -10,12 +10,14 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  Image
+  Image,
+  ScrollView
 } from 'react-native';
 import Blink from './components/Blink';
 import LotsOfStyle from './components/LotsOfStyle';
 import FixedDimensions from './components/FixedDimensions';
 import FlexStyle from './components/FlexStyle';
+import WordScrambler from './components/WordScrambler';
 
 
 class Greeting extends Component {
@@ -41,31 +43,22 @@ class Bananas extends Component {
 }
 
 export default class HelloWorldApp extends Component {
-  state = {cycle: false};
-
-  componentDidMount() {
-    setInterval(() => {this.setState(previousState => (
-      {cycle: !previousState.cycle}
-    ))}, 3000);
-  };
-
   render() {
-    if(this.state.cycle)
-    {
-      return (
+    return (
+      <ScrollView>
         <View style={{flex:1, justifyContent: "center", alignItems: "center"}}>
           <Greeting name='Ren'/>
           <Bananas/>
           <LotsOfStyle/>
           <FixedDimensions />
         </View>
-      );
-    }
-
-    return (
-      <View style={{flex:1}}>
-        <FlexStyle />
-      </View>
-    );
+        <View style={{height: 500}}>
+          <FlexStyle />
+        </View>
+        <View style={{height: 300}}>
+          <WordScrambler />
+        </View>
+      </ScrollView>
+    ); 
   }
 }
