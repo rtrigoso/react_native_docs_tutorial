@@ -14,6 +14,9 @@ import {
 } from 'react-native';
 import Blink from './components/Blink';
 import LotsOfStyle from './components/LotsOfStyle';
+import FixedDimensions from './components/FixedDimensions';
+import FlexDimensions from './components/FlexDimensions';
+
 
 class Greeting extends Component {
   render() {
@@ -38,12 +41,30 @@ class Bananas extends Component {
 }
 
 export default class HelloWorldApp extends Component {
+  state = {cycle: false};
+
+  componentDidMount() {
+    setInterval(() => {this.setState(previousState => (
+      {cycle: !previousState.cycle}
+    ))}, 1000);
+  };
+
   render() {
+    if(this.state.cycle)
+    {
+      return (
+        <View style={{flex:1, justifyContent: "center", alignItems: "center"}}>
+          <Greeting name='Ren'/>
+          <Bananas/>
+          <LotsOfStyle/>
+          <FixedDimensions />
+        </View>
+      );
+    }
+
     return (
-      <View style={{flex:1, justifyContent: "center", alignItems: "center"}}>
-        <Greeting name='Ren'/>
-        <Bananas/>
-        <LotsOfStyle/>
+      <View style={{flex:1}}>
+        <FlexDimensions />
       </View>
     );
   }
