@@ -12,12 +12,13 @@ import {
   Text,
   Image
 } from 'react-native';
+import Blink from './components/blink';
 
 class Greeting extends Component {
   render() {
     return (
       <View style={{alignItems: 'center'}} >
-        <Text>Hello {this.props.name}!</Text>
+        <Text><Blink text="Hello" /> {this.props.name}!</Text>
       </View>
     )
   }
