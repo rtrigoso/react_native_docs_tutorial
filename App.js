@@ -18,6 +18,8 @@ import LotsOfStyle from './components/LotsOfStyle';
 import FixedDimensions from './components/FixedDimensions';
 import FlexStyle from './components/FlexStyle';
 import WordScrambler from './components/WordScrambler';
+import ButtonExample from './components/ButtonExample';
+import TouchableExamples from './components/TouchableExamples';
 
 
 class Greeting extends Component {
@@ -55,8 +57,10 @@ export default class HelloWorldApp extends Component {
         <View style={{height: 500}}>
           <FlexStyle />
         </View>
-        <View style={{height: 300}}>
+        <View style={{height: 800}}>
           <WordScrambler />
+          <ButtonExample />
+          <TouchableExamples />
         </View>
       </ScrollView>
     ); 
