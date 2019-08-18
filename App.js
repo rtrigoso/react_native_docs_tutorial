@@ -15,7 +15,7 @@ import {
 import Blink from './components/Blink';
 import LotsOfStyle from './components/LotsOfStyle';
 import FixedDimensions from './components/FixedDimensions';
-import FlexDimensions from './components/FlexDimensions';
+import FlexStyle from './components/FlexStyle';
 
 
 class Greeting extends Component {
@@ -46,7 +46,7 @@ export default class HelloWorldApp extends Component {
   componentDidMount() {
     setInterval(() => {this.setState(previousState => (
       {cycle: !previousState.cycle}
-    ))}, 1000);
+    ))}, 3000);
   };
 
   render() {
@@ -64,7 +64,7 @@ export default class HelloWorldApp extends Component {
 
     return (
       <View style={{flex:1}}>
-        <FlexDimensions />
+        <FlexStyle />
       </View>
     );
   }
