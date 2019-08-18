@@ -12,7 +12,8 @@ import {
   Text,
   Image
 } from 'react-native';
-import Blink from './components/blink';
+import Blink from './components/Blink';
+import LotsOfStyle from './components/LotsOfStyle';
 
 class Greeting extends Component {
   render() {
@@ -42,6 +43,7 @@ export default class HelloWorldApp extends Component {
       <View style={{flex:1, justifyContent: "center", alignItems: "center"}}>
         <Greeting name='Ren'/>
         <Bananas/>
+        <LotsOfStyle/>
       </View>
     );
   }
