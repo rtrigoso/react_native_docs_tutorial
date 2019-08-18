@@ -47,7 +47,9 @@ class Bananas extends Component {
 export default class HelloWorldApp extends Component {
   render() {
     return (
-      <ScrollView>
+      <ScrollView
+        pagingEnabled={true}
+      >
         <View style={{flex:1, justifyContent: "center", alignItems: "center"}}>
           <Greeting name='Ren'/>
           <Bananas/>
